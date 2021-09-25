@@ -188,7 +188,7 @@ monitor: CMakeFiles/monitor.dir/src/process.cpp.o
 monitor: CMakeFiles/monitor.dir/src/processor.cpp.o
 monitor: CMakeFiles/monitor.dir/src/system.cpp.o
 monitor: CMakeFiles/monitor.dir/build.make
-monitor: /usr/lib/x86_64-linux-gnu/libcurses.so
+monitor: /usr/lib/x86_64-linux-gnu/libncurses.so
 monitor: /usr/lib/x86_64-linux-gnu/libform.so
 monitor: CMakeFiles/monitor.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/sf_GitHub/Ubuntu_System_Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable monitor"

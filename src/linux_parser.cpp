@@ -1,6 +1,5 @@
 #include <dirent.h>
 #include <unistd.h>
-#include <sstream>
 #include <string>
 #include <vector>
 
@@ -11,7 +10,7 @@ using std::string;
 using std::to_string;
 using std::vector;
 
-// DONE: An example of how to read data from the filesystem
+// Returns the pretty name of the operating system
 string LinuxParser::OperatingSystem() {
   string line;
   string key;
@@ -34,9 +33,9 @@ string LinuxParser::OperatingSystem() {
   return value;
 }
 
-// DONE: An example of how to read data from the filesystem
+// Returns the kernel version i.e. 5.xx.x.xx-generic
 string LinuxParser::Kernel() {
-  string os, kernel, version;
+  string os, version, kernel;
   string line;
   std::ifstream stream(kProcDirectory + kVersionFilename);
   if (stream.is_open()) {
@@ -92,8 +91,27 @@ vector<string> LinuxParser::CpuUtilization() { return {}; }
 // TODO: Read and return the total number of processes
 int LinuxParser::TotalProcesses() { return 0; }
 
-// TODO: Read and return the number of running processes
-int LinuxParser::RunningProcesses() { return 0; }
+// Reads and returns the number of running processes
+int LinuxParser::RunningProcesses()
+{
+  std::string value, key, line;
+
+  std::ifstream filestream(kProcDirectory + kStatFilename);
+  if(filestream.is_open())
+  {
+    while(std::getline(filestream, line))
+    {
+      std::istringstream linestream(line);
+      while(linestream >> key >> value)
+      {
+        if(!key.compare("procs_running"))
+        {
+          return std::stoi(value);
+        }
+      }
+    }
+  }
+}
 
 // TODO: Read and return the command associated with a process
 // REMOVE: [[maybe_unused]] once you define the function

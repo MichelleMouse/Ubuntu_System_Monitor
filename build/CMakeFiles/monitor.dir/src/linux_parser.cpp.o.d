@@ -22,13 +22,27 @@ CMakeFiles/monitor.dir/src/linux_parser.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
- /usr/include/c++/9/sstream /usr/include/c++/9/istream \
- /usr/include/c++/9/ios /usr/include/c++/9/iosfwd \
+ /usr/include/c++/9/string \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h \
  /usr/include/c++/9/pstl/pstl_config.h \
  /usr/include/c++/9/bits/stringfwd.h /usr/include/c++/9/bits/memoryfwd.h \
+ /usr/include/c++/9/bits/char_traits.h \
+ /usr/include/c++/9/bits/stl_algobase.h \
+ /usr/include/c++/9/bits/functexcept.h \
+ /usr/include/c++/9/bits/exception_defines.h \
+ /usr/include/c++/9/bits/cpp_type_traits.h \
+ /usr/include/c++/9/ext/type_traits.h \
+ /usr/include/c++/9/ext/numeric_traits.h \
+ /usr/include/c++/9/bits/stl_pair.h /usr/include/c++/9/bits/move.h \
+ /usr/include/c++/9/bits/concept_check.h /usr/include/c++/9/type_traits \
+ /usr/include/c++/9/bits/stl_iterator_base_types.h \
+ /usr/include/c++/9/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/9/debug/assertions.h \
+ /usr/include/c++/9/bits/stl_iterator.h \
+ /usr/include/c++/9/bits/ptr_traits.h /usr/include/c++/9/debug/debug.h \
+ /usr/include/c++/9/bits/predefined_ops.h \
  /usr/include/c++/9/bits/postypes.h /usr/include/c++/9/cwchar \
  /usr/include/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -43,36 +57,33 @@ CMakeFiles/monitor.dir/src/linux_parser.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/c++/9/exception /usr/include/c++/9/bits/exception.h \
- /usr/include/c++/9/bits/exception_ptr.h \
- /usr/include/c++/9/bits/exception_defines.h \
- /usr/include/c++/9/bits/cxxabi_init_exception.h \
- /usr/include/c++/9/typeinfo /usr/include/c++/9/bits/hash_bytes.h \
- /usr/include/c++/9/new /usr/include/c++/9/bits/nested_exception.h \
- /usr/include/c++/9/bits/move.h /usr/include/c++/9/bits/concept_check.h \
- /usr/include/c++/9/type_traits /usr/include/c++/9/bits/char_traits.h \
- /usr/include/c++/9/bits/stl_algobase.h \
- /usr/include/c++/9/bits/functexcept.h \
- /usr/include/c++/9/bits/cpp_type_traits.h \
- /usr/include/c++/9/ext/type_traits.h \
- /usr/include/c++/9/ext/numeric_traits.h \
- /usr/include/c++/9/bits/stl_pair.h \
- /usr/include/c++/9/bits/stl_iterator_base_types.h \
- /usr/include/c++/9/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/9/debug/assertions.h \
- /usr/include/c++/9/bits/stl_iterator.h \
- /usr/include/c++/9/bits/ptr_traits.h /usr/include/c++/9/debug/debug.h \
- /usr/include/c++/9/bits/predefined_ops.h /usr/include/c++/9/cstdint \
+ /usr/include/c++/9/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/c++/9/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/c++allocator.h \
+ /usr/include/c++/9/ext/new_allocator.h /usr/include/c++/9/new \
+ /usr/include/c++/9/exception /usr/include/c++/9/bits/exception.h \
+ /usr/include/c++/9/bits/exception_ptr.h \
+ /usr/include/c++/9/bits/cxxabi_init_exception.h \
+ /usr/include/c++/9/typeinfo /usr/include/c++/9/bits/hash_bytes.h \
+ /usr/include/c++/9/bits/nested_exception.h \
  /usr/include/c++/9/bits/localefwd.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++locale.h \
  /usr/include/c++/9/clocale /usr/include/locale.h \
- /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/9/cctype \
- /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/9/iosfwd \
+ /usr/include/c++/9/cctype /usr/include/ctype.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endianness.h \
- /usr/include/c++/9/bits/ios_base.h /usr/include/c++/9/ext/atomicity.h \
+ /usr/include/c++/9/bits/ostream_insert.h \
+ /usr/include/c++/9/bits/cxxabi_forced.h \
+ /usr/include/c++/9/bits/stl_function.h \
+ /usr/include/c++/9/backward/binders.h \
+ /usr/include/c++/9/bits/range_access.h \
+ /usr/include/c++/9/initializer_list \
+ /usr/include/c++/9/bits/basic_string.h \
+ /usr/include/c++/9/ext/atomicity.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h \
@@ -96,17 +107,6 @@ CMakeFiles/monitor.dir/src/linux_parser.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/atomic_word.h \
- /usr/include/c++/9/bits/locale_classes.h /usr/include/c++/9/string \
- /usr/include/c++/9/bits/allocator.h \
- /usr/include/x86_64-linux-gnu/c++/9/bits/c++allocator.h \
- /usr/include/c++/9/ext/new_allocator.h \
- /usr/include/c++/9/bits/ostream_insert.h \
- /usr/include/c++/9/bits/cxxabi_forced.h \
- /usr/include/c++/9/bits/stl_function.h \
- /usr/include/c++/9/backward/binders.h \
- /usr/include/c++/9/bits/range_access.h \
- /usr/include/c++/9/initializer_list \
- /usr/include/c++/9/bits/basic_string.h \
  /usr/include/c++/9/ext/alloc_traits.h \
  /usr/include/c++/9/bits/alloc_traits.h /usr/include/c++/9/string_view \
  /usr/include/c++/9/limits /usr/include/c++/9/bits/functional_hash.h \
@@ -134,7 +134,16 @@ CMakeFiles/monitor.dir/src/linux_parser.cpp.o: \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
- /usr/include/c++/9/bits/basic_string.tcc \
+ /usr/include/c++/9/bits/basic_string.tcc /usr/include/c++/9/vector \
+ /usr/include/c++/9/bits/stl_construct.h \
+ /usr/include/c++/9/bits/stl_uninitialized.h /usr/include/c++/9/utility \
+ /usr/include/c++/9/bits/stl_relops.h \
+ /usr/include/c++/9/bits/stl_vector.h \
+ /usr/include/c++/9/bits/stl_bvector.h /usr/include/c++/9/bits/vector.tcc \
+ /media/sf_GitHub/Ubuntu_System_Monitor/include/linux_parser.h \
+ /usr/include/c++/9/fstream /usr/include/c++/9/istream \
+ /usr/include/c++/9/ios /usr/include/c++/9/bits/ios_base.h \
+ /usr/include/c++/9/bits/locale_classes.h \
  /usr/include/c++/9/bits/locale_classes.tcc \
  /usr/include/c++/9/system_error \
  /usr/include/x86_64-linux-gnu/c++/9/bits/error_constants.h \
@@ -149,14 +158,7 @@ CMakeFiles/monitor.dir/src/linux_parser.cpp.o: \
  /usr/include/c++/9/bits/locale_facets.tcc \
  /usr/include/c++/9/bits/basic_ios.tcc /usr/include/c++/9/ostream \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/bits/istream.tcc \
- /usr/include/c++/9/bits/sstream.tcc /usr/include/c++/9/vector \
- /usr/include/c++/9/bits/stl_construct.h \
- /usr/include/c++/9/bits/stl_uninitialized.h /usr/include/c++/9/utility \
- /usr/include/c++/9/bits/stl_relops.h \
- /usr/include/c++/9/bits/stl_vector.h \
- /usr/include/c++/9/bits/stl_bvector.h /usr/include/c++/9/bits/vector.tcc \
- /media/sf_GitHub/Ubuntu_System_Monitor/include/linux_parser.h \
- /usr/include/c++/9/fstream /usr/include/c++/9/bits/codecvt.h \
+ /usr/include/c++/9/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
  /usr/include/c++/9/bits/fstream.tcc /usr/include/c++/9/regex \
@@ -194,7 +196,8 @@ CMakeFiles/monitor.dir/src/linux_parser.cpp.o: \
  /usr/include/c++/9/bits/atomic_base.h \
  /usr/include/c++/9/bits/atomic_lockfree_defines.h \
  /usr/include/c++/9/backward/auto_ptr.h \
- /usr/include/c++/9/pstl/glue_memory_defs.h /usr/include/c++/9/stack \
+ /usr/include/c++/9/pstl/glue_memory_defs.h /usr/include/c++/9/sstream \
+ /usr/include/c++/9/bits/sstream.tcc /usr/include/c++/9/stack \
  /usr/include/c++/9/deque /usr/include/c++/9/bits/stl_deque.h \
  /usr/include/c++/9/bits/deque.tcc /usr/include/c++/9/bits/stl_stack.h \
  /usr/include/c++/9/map /usr/include/c++/9/bits/stl_tree.h \

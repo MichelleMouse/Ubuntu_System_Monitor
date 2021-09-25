@@ -15,7 +15,7 @@ I will regularly update this readme with my progress and system requirements!
 👉 CMake 3.21.3\
 👉 C++ 17\
 👉 g++ 9.3.0\
-👉 [ncurses library](https://invisible-island.net/ncurses/announce.html) 6.2\
+👉 [ncurses library](https://invisible-island.net/ncurses/announce.html) 6.2
 
 ## Installation
 You will need to install the ncurses library in Linux with the following command
