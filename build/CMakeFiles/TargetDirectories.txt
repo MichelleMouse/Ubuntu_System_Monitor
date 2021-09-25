@@ -1,3 +1,0 @@
-/media/sf_GitHub/Ubuntu_System_Monitor/build/CMakeFiles/rebuild_cache.dir
-/media/sf_GitHub/Ubuntu_System_Monitor/build/CMakeFiles/edit_cache.dir
-/media/sf_GitHub/Ubuntu_System_Monitor/build/CMakeFiles/monitor.dir
