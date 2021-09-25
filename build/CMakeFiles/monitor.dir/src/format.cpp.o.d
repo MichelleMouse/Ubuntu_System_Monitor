@@ -1,6 +1,8 @@
 CMakeFiles/monitor.dir/src/format.cpp.o: \
  /media/sf_GitHub/Ubuntu_System_Monitor/src/format.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/9/string \
+ /usr/include/stdc-predef.h \
+ /media/sf_GitHub/Ubuntu_System_Monitor/include/format.h \
+ /usr/include/c++/9/string \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -122,5 +124,4 @@ CMakeFiles/monitor.dir/src/format.cpp.o: \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
- /usr/include/c++/9/bits/basic_string.tcc \
- /media/sf_GitHub/Ubuntu_System_Monitor/include/format.h
+ /usr/include/c++/9/bits/basic_string.tcc
