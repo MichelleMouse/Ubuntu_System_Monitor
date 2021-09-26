@@ -14,8 +14,10 @@ using std::size_t;
 using std::string;
 using std::vector;
 
-// TODO: Return the system's CPU
-Processor& System::Cpu() { return cpu_; }
+// Return the system's CPU
+Processor& System::Cpu() {
+  return cpu_;
+}
 
 // TODO: Return a container composed of the system's processes
 vector<Process>& System::Processes() { return processes_; }
@@ -26,8 +28,12 @@ std::string System::Kernel()
   return LinuxParser::Kernel();
 }
 
-// TODO: Return the system's memory utilization
-float System::MemoryUtilization() { return 0.0; }
+// Returns the system's memory utilization
+// Calculates usedMemory following htop's creator explanation here https://stackoverflow.com/questions/41224738/how-to-calculate-system-memory-usage-from-proc-meminfo-like-htop/41251290#41251290
+float System::MemoryUtilization()
+{
+  return LinuxParser::MemoryUtilization();
+}
 
 // Returns the operating system pretty name
 std::string System::OperatingSystem()
@@ -35,7 +41,7 @@ std::string System::OperatingSystem()
   return LinuxParser::OperatingSystem();
 }
 
-// TODO: Return the number of processes actively running on the system
+// Returns the number of processes actively running on the system
 int System::RunningProcesses()
 {
   return LinuxParser::RunningProcesses();
@@ -50,5 +56,5 @@ int System::TotalProcesses()
 // Returns the number of seconds since the system started running
 long int System::UpTime()
 {
-  return LinuxParser::UpTime(); 
+  return LinuxParser::UpTime();
 }

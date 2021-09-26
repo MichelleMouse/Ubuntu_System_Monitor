@@ -10,9 +10,9 @@ string LinuxParser::OperatingSystem() {
   string line;
   string key;
   string value;
-  std::ifstream filestream(kOSPath);
-  if (filestream.is_open()) {
-    while (std::getline(filestream, line)) {
+  std::ifstream stream(kOSPath);
+  if (stream.is_open()) {
+    while (std::getline(stream, line)) {
       std::replace(line.begin(), line.end(), ' ', '_');
       std::replace(line.begin(), line.end(), '=', ' ');
       std::replace(line.begin(), line.end(), '"', ' ');
@@ -61,8 +61,30 @@ vector<int> LinuxParser::Pids() {
   return pids;
 }
 
-// TODO: Read and return the system memory utilization
-float LinuxParser::MemoryUtilization() { return 0.0; }
+// Reads and returns the system memory utilization
+// Calculates usedMemory following htop's creator explanation here https://stackoverflow.com/questions/41224738/how-to-calculate-system-memory-usage-from-proc-meminfo-like-htop/41251290#41251290
+float LinuxParser::MemoryUtilization()
+{
+  float totalMem, freeMem;
+  std::string key, value, kb, line;
+  std::ifstream stream(kProcDirectory + kMeminfoFilename);
+
+  if (stream.is_open()) {
+    while (std::getline(stream, line)) {
+      std::replace(line.begin(), line.end(), ':', ' ');
+      std::istringstream linestream(line);
+      while (linestream >> key >> value >> kb) {
+        if (key == "MemTotal") {
+          totalMem = std::stof(value);
+        } else if (key == "MemFree") {
+          freeMem = std::stof(value);
+        }
+      }
+    }
+  }
+
+  return ((totalMem - freeMem) / totalMem);
+}
 
 // Reads and returns the system uptime
 long LinuxParser::UpTime()
@@ -91,8 +113,28 @@ long LinuxParser::ActiveJiffies() { return 0; }
 // TODO: Read and return the number of idle jiffies for the system
 long LinuxParser::IdleJiffies() { return 0; }
 
-// TODO: Read and return CPU utilization
-vector<string> LinuxParser::CpuUtilization() { return {}; }
+// Reads and returns CPU utilization
+vector<string> LinuxParser::CpuUtilization()
+{
+  std::string key, user, nice, system, idle, iowait, irq, softirq, steal, guest, guest_nice;
+  std::string line;
+  std::ifstream stream(kProcDirectory + kStatFilename);
+
+  if(stream.is_open())
+  {
+    while(std::getline(stream, line))
+    {
+      std::istringstream linestream(line);
+      while(linestream >> key >> user >> nice >> system >> idle >> iowait >> irq >> softirq >> steal >> guest >> guest_nice)
+      {
+        if (key == "cpu")
+        {
+          return {user, nice, system, idle, iowait, irq, softirq, steal, guest, guest_nice};
+        }
+      }
+    }
+  }
+}
 
 // Reads and returns the total number of processes
 int LinuxParser::TotalProcesses()
