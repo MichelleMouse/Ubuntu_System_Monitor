@@ -1,13 +1,18 @@
 #ifndef PROCESS_H
 #define PROCESS_H
 
+#include <cctype>
+#include <sstream>
 #include <string>
-/*
-Basic class for Process representation
-It contains relevant attributes as shown below
-*/
+#include <unistd.h>
+#include <vector>
+
+#include
+
+//Basic class for Process representation
 class Process {
- public:
+public:
+  Process(int id);
   int Pid();                               // TODO: See src/process.cpp
   std::string User();                      // TODO: See src/process.cpp
   std::string Command();                   // TODO: See src/process.cpp
@@ -17,7 +22,11 @@ class Process {
   bool operator<(Process const& a) const;  // TODO: See src/process.cpp
 
   // TODO: Declare any necessary private members
- private:
+private:
+  int pid_;
+  long int upTime_;
+  float cpuUse_;
+  std::string user_, command_, ram_;
 };
 
 #endif
