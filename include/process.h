@@ -7,26 +7,28 @@
 #include <unistd.h>
 #include <vector>
 
-#include
+#include "linux_parser.h"
 
 //Basic class for Process representation
 class Process {
 public:
-  Process(int id);
-  int Pid();                               // TODO: See src/process.cpp
-  std::string User();                      // TODO: See src/process.cpp
-  std::string Command();                   // TODO: See src/process.cpp
-  float CpuUtilization();                  // TODO: See src/process.cpp
-  std::string Ram();                       // TODO: See src/process.cpp
-  long int UpTime();                       // TODO: See src/process.cpp
-  bool operator<(Process const& a) const;  // TODO: See src/process.cpp
+  Process(const int id);
+  int Pid();
+  std::string User();
+  std::string Command();
+  float CpuUtilization();
+  std::string Ram() const;
+  long int UpTime();
+  float CpuUse() const;
+  bool operator<(Process const& a) const;
 
   // TODO: Declare any necessary private members
 private:
   int pid_;
-  long int upTime_;
   float cpuUse_;
-  std::string user_, command_, ram_;
+  // float prevIdle_ = 0;
+  // float prevNonIdle_ = 0;
+  // float prevTotal_ = 0;
 };
 
 #endif

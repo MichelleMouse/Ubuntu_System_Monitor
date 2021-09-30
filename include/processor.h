@@ -11,9 +11,9 @@ public:
   float Utilization();
 
 private:
-  float prevIdle = 0;
-  float prevNonIdle = 0;
-  float prevTotal = 0;
+  float prevIdle_ = 0;
+  float prevNonIdle_ = 0;
+  float prevTotal_ = 0;
 };
 
 #endif
