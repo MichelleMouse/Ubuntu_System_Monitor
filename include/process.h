@@ -17,7 +17,7 @@ public:
   std::string User();
   std::string Command();
   float CpuUtilization();
-  std::string Ram() const;
+  std::string Ram();
   long int UpTime();
   float CpuUse() const;
   bool operator<(Process const& a) const;
@@ -26,9 +26,7 @@ public:
 private:
   int pid_;
   float cpuUse_;
-  // float prevIdle_ = 0;
-  // float prevNonIdle_ = 0;
-  // float prevTotal_ = 0;
+  std::string ram_;
 };
 
 #endif

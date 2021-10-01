@@ -26,7 +26,7 @@ vector<Process>& System::Processes()
   std::vector<int> pids = LinuxParser::Pids();
   processes_.clear();
 
-  for(int i = 0; i < pids.size(); i++)
+  for(unsigned int i = 0; i < pids.size(); i++)
   {
     Process prcss = Process(pids[i]);
     processes_.emplace_back(prcss);

@@ -42,9 +42,10 @@ std::string Process::Command()
 }
 
 // Returns this process's memory utilization
-std::string Process::Ram() const
+std::string Process::Ram()
 {
-  return LinuxParser::Ram(pid_);
+  ram_ = LinuxParser::Ram(pid_);
+  return ram_;
 }
 
 // Returns the user (name) that generated this process
@@ -64,6 +65,8 @@ bool Process::operator<(Process const& a) const
 {
   if(cpuUse_ > a.CpuUse())
   {
+    return true;
+  } else if (cpuUse_ == a.CpuUse() && ram_ < a.ram_) {
     return true;
   } else {
     return false;

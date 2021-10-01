@@ -47,39 +47,39 @@ string LinuxParser::Kernel() {
 }
 
 // Returns the PIDs folder name
-vector<int> LinuxParser::Pids() {
-  vector<int> pids; //Modify this to std::vector<std::string> for full path
-  const std::filesystem::path sysFile{kProcDirectory};
+vector<int> LinuxParser::Pids() 
+{
+  // bonus working in local
+  // std::vector<int> pids;
+  // const std::experimental::filesystem::path sysFile{kProcDirectory};
 
-  for(std::filesystem::directory_entry const& dir_entry : std::filesystem::directory_iterator{sysFile})
-  {
-    if(std::filesystem::is_directory(dir_entry))
-    {
-      std::string dir = dir_entry.path().filename().string(); //Modify this to dir_entry.path().string() to get full path instead
-      if(std::all_of(dir.begin(), dir.end(), isdigit))
-      {
-        pids.push_back(std::stoi(dir));
-      }
-    }
-  }
-
-  return pids;
-  // vector<int> pids;
-  // DIR* directory = opendir(kProcDirectory.c_str());
-  // struct dirent* file;
-  // while ((file = readdir(directory)) != nullptr) {
-  //   // Is this a directory?
-  //   if (file->d_type == DT_DIR) {
-  //     // Is every character of the name a digit?
-  //     string filename(file->d_name);
-  //     if (std::all_of(filename.begin(), filename.end(), isdigit)) {
-  //       int pid = stoi(filename);
-  //       pids.push_back(pid);
+  // for(std::experimental::filesystem::directory_entry const& dir_entry : std::experimental::filesystem::directory_iterator{sysFile})
+  // {
+  //   if(std::experimental::filesystem::is_directory(dir_entry))
+  //   {
+  //     std::string dir = dir_entry.path().filename().string();
+  //     if(std::all_of(dir.begin(), dir.end(), isdigit))
+  //     {
+  //       pids.push_back(std::stoi(dir));
   //     }
   //   }
   // }
-  // closedir(directory);
-  // return pids;
+  vector<int> pids;
+  DIR* directory = opendir(kProcDirectory.c_str());
+  struct dirent* file;
+  while ((file = readdir(directory)) != nullptr) {
+    // Is this a directory?
+    if (file->d_type == DT_DIR) {
+      // Is every character of the name a digit?
+      string filename(file->d_name);
+      if (std::all_of(filename.begin(), filename.end(), isdigit)) {
+        int pid = stoi(filename);
+        pids.push_back(pid);
+      }
+    }
+  }
+  closedir(directory);
+  return pids;
 }
 
 /*
@@ -274,7 +274,8 @@ string LinuxParser::Command(int pid)
 // Reads and returns the memory used by a process
 string LinuxParser::Ram(int pid)
 {
-  float memory, freeMem;
+  float freeMem;
+  int memoryUsage;
   std::string key, value, line;
   std::ifstream stream(kProcDirectory + "/" + std::to_string(pid) + kStatusFilename);
 
@@ -288,18 +289,20 @@ string LinuxParser::Ram(int pid)
       {
         if (key == "VmSize")
         {
+          std::stringstream memory;
           try
           {
-            memory = std::stof(value)/1024.0;
+            memory << std::fixed << std::setprecision(1) << (std::stoi(value)/1024);
+            memoryUsage = std::stoi(memory.str());
           } catch (...) {
-            memory = 0.0;
+            memoryUsage = 0;
           }
         }
       }
     }
   }
 
-  return std::to_string(memory);
+  return std::to_string(memoryUsage);
 }
 
 // Reads and returns the user ID associated with a process
