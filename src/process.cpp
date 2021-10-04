@@ -26,7 +26,7 @@ float Process::CpuUtilization()
 
   long seconds = LinuxParser::UpTime() - procUpTime;
 
-  return activeJiffies / seconds;
+  return (activeJiffies * 1.0) / (seconds * 1.0);
 
 }
 

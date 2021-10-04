@@ -216,6 +216,7 @@ vector<string> LinuxParser::CpuUtilization()
       }
     }
   }
+  return {};
 }
 
 // Reads and returns the total number of processes
@@ -286,6 +287,7 @@ string LinuxParser::Command(int pid)
       }
     }
   }
+  return string();
 }
 
 // Reads and returns the memory used by a process
@@ -345,6 +347,7 @@ std::string LinuxParser::Uid(int pid)
       }
     }
   }
+  return string();
 }
 
 // Reads and returns the user associated with a process
@@ -369,6 +372,7 @@ string LinuxParser::User(int pid)
       }
     }
   }
+  return string();
 }
 
 // Reads and returns the uptime of a process
