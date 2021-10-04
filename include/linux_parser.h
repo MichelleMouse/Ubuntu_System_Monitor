@@ -32,6 +32,15 @@ int RunningProcesses();
 std::string OperatingSystem();
 std::string Kernel();
 
+//Propertie values
+const std::string filterTotalMemory("MemTotal");
+const std::string filterFreeMemory("MemFree");
+const std::string filterCPU("cpu");
+const std::string filterProcesses("processes");
+const std::string filterProcRunning("procs_running");
+const std::string filterProcMemory("VmRSS");
+const std::string filterUserID("Uid");
+
 // CPU
 enum CPUStates {
   kUser_ = 0,
@@ -60,4 +69,3 @@ long int UpTime(int pid);
 };  // namespace LinuxParser
 
 #endif
-

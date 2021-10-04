@@ -9,11 +9,6 @@
 #include "system.h"
 #include "linux_parser.h"
 
-using std::set;
-using std::size_t;
-using std::string;
-using std::vector;
-
 // Returns the system's CPU
 Processor& System::Cpu()
 {
@@ -21,7 +16,7 @@ Processor& System::Cpu()
 }
 
 // Returns a container composed of the system's processes
-vector<Process>& System::Processes()
+std::vector<Process>& System::Processes()
 {
   std::vector<int> pids = LinuxParser::Pids();
   processes_.clear();

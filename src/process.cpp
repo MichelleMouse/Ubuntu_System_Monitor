@@ -1,9 +1,5 @@
 #include "process.h"
 
-using std::string;
-using std::to_string;
-using std::vector;
-
 Process::Process(const int id)
 {
   pid_ = id;
@@ -25,14 +21,13 @@ float Process::CpuUse() const
 // Returns the process's CPU utilization
 float Process::CpuUtilization()
 {
-  try
-  {
-    cpuUse_ = (LinuxParser::ActiveJiffies() / (LinuxParser::Jiffies() - LinuxParser::UpTime(pid_))) * 1.0;
-  } catch (...) {
-    cpuUse_ = 0.0;
-  }
+  long activeJiffies = LinuxParser::ActiveJiffies(pid_);
+  long procUpTime = LinuxParser::UpTime(pid_);
 
-  return cpuUse_;
+  long seconds = LinuxParser::UpTime() - procUpTime;
+
+  return activeJiffies / seconds;
+
 }
 
 // Returns the command that generated this process
@@ -68,7 +63,7 @@ bool Process::operator<(Process const& a) const
     return true;
   } else if (cpuUse_ == a.CpuUse() && ram_ < a.ram_) {
     return true;
-  } else {
-    return false;
   }
+  return false;
+
 }
