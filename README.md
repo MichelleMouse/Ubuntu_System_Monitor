@@ -3,14 +3,14 @@
 
 Welcome to the System monitor for Ubuntu repository! This is the second project in the [C++ Nanodegree](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213).
 
-In this project, I will develop a system monitor for a Linux based system (Ubuntu 20), a basic version of [htop](https://htop.dev).
+In this project, I will develop a system monitor for a Linux based system (Ubuntu 18), a basic version of [htop](https://htop.dev).
 
 I will regularly update this readme with my progress and system requirements!
 
 <!-- <p align="center"><img src="img/Terminal.png" width="400" height="300" alt="Image of the terminal"/> <img src="img/Results.png" width="300" height="300" alt="Image of the results"/> </p> -->
 
 ## Environment
-👉 Ubuntu 20.04\
+👉 Ubuntu 18\
 👉 GNU Make 4.2.1\
 👉 CMake 3.21.3\
 👉 C++ 17\
@@ -36,3 +36,6 @@ The executable is within the `build` directory. You can run it as follows
 ```
 ./build/monitor
 ```
+
+## ToDo
+- [ ] Make the system work in Ubuntu 20

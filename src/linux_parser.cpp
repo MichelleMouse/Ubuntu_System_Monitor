@@ -226,22 +226,6 @@ int LinuxParser::TotalProcesses()
   int totalProcesses = findValueByKey<int>(filterProcesses, kStatFilename);
 
   return totalProcesses;
-
-  // std::ifstream filestream(kProcDirectory + kStatFilename);
-  // if(filestream.is_open())
-  // {
-  //   while(std::getline(filestream, line))
-  //   {
-  //     std::istringstream linestream(line);
-  //     while(linestream >> key >> value)
-  //     {
-  //       if(!key.compare("processes"))
-  //       {
-  //         return std::stoi(value);
-  //       }
-  //     }
-  //   }
-  // }
 }
 
 // Reads and returns the number of running processes
@@ -250,24 +234,6 @@ int LinuxParser::RunningProcesses()
   int runningProcesses = findValueByKey<int>(filterProcRunning, kStatFilename);
 
   return runningProcesses;
-
-  // std::string value, key, line;
-
-  // std::ifstream filestream(kProcDirectory + kStatFilename);
-  // if(filestream.is_open())
-  // {
-  //   while(std::getline(filestream, line))
-  //   {
-  //     std::istringstream linestream(line);
-  //     while(linestream >> key >> value)
-  //     {
-  //       if(!key.compare("procs_running"))
-  //       {
-  //         return std::stoi(value);
-  //       }
-  //     }
-  //   }
-  // }
 }
 
 // Reads and returns the command associated with a process
